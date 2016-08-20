@@ -23,6 +23,7 @@
         android:id="@+id/edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:hint="Type something here"
         android:maxLines="2"/>
 
@@ -38,4 +39,7 @@
         android:layout_height="wrap_content"
         />
 
+=======
+        android:hint="Type something here"/>
+>>>>>>> 2f3d899abc6bbec256e79370e305ef507ae98483
 </LinearLayout>

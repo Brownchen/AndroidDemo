@@ -1,5 +1,6 @@
 package com.example.brown.uiwidgetset;
 
+<<<<<<< HEAD
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -9,10 +10,18 @@ import android.os.Bundle;
 //import android.support.design.widget.Snackbar;
 //import android.support.v7.app.AppCompatActivity;
 //import android.support.v7.widget.Toolbar;
+=======
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+>>>>>>> 2f3d899abc6bbec256e79370e305ef507ae98483
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -24,6 +33,12 @@ public class MainActivity extends Activity {
     private EditText editText;
     private ImageView imageView;
     private ProgressBar progressBar;
+=======
+
+public class MainActivity extends AppCompatActivity {
+
+    private Button button;
+>>>>>>> 2f3d899abc6bbec256e79370e305ef507ae98483
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +48,7 @@ public class MainActivity extends Activity {
 //        setSupportActionBar(toolbar);
 
         button = (Button) findViewById(R.id.button);
+<<<<<<< HEAD
         editText = (EditText) findViewById(R.id.edit_text);
         imageView = (ImageView) findViewById(R.id.image_view);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
@@ -66,6 +82,12 @@ public class MainActivity extends Activity {
                 progressDialog.setMessage("Loading...");
                 progressDialog.setCancelable(true);
                 progressDialog.show();
+=======
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+>>>>>>> 2f3d899abc6bbec256e79370e305ef507ae98483
             }
         });
 

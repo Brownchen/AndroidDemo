@@ -1,5 +1,0 @@
-CHANGED,D:\AndroidDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,D:\AndroidDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\activitytest\FirstActivity$override.class
-CHANGED,D:\AndroidDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\activitytest\SecondActivity$override.class
-CHANGED,D:\AndroidDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\activitytest\SecondActivity$1$override.class
-CHANGED,D:\AndroidDemo\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\activitytest\FirstActivity$1$override.class
