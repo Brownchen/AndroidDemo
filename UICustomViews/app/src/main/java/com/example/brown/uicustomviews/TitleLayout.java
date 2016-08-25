@@ -1,6 +1,5 @@
 package com.example.brown.uicustomviews;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
@@ -17,6 +16,7 @@ public class TitleLayout extends LinearLayout {
 
     public TitleLayout(Context context, AttributeSet attrs){
         super(context,attrs);
+        if(isInEditMode()){return;}
         LayoutInflater.from(context).inflate(R.layout.title,this);
         Button titleBack = (Button) findViewById(R.id.title_back);
         Button titleEdit = (Button) findViewById(R.id.title_edit);
