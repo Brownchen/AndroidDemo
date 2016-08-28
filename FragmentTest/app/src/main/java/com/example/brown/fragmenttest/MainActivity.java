@@ -1,7 +1,5 @@
 package com.example.brown.fragmenttest;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,13 +15,13 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AnotherRightFragment fragment = new AnotherRightFragment();
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.right_fragment,fragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
+//                AnotherRightFragment fragment = new AnotherRightFragment();
+//                FragmentManager fragmentManager = getFragmentManager();
+//                FragmentTransaction transaction = fragmentManager.beginTransaction();
+//                transaction.replace(R.id.right_fragment,fragment);
+//                transaction.addToBackStack(null);
+//                transaction.commit();
             }
-        });
+       });
     }
 }
