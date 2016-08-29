@@ -9,19 +9,19 @@ public class News {
 
     private String content;
 
-    private String getTitle(){
+    public String getTitle(){
         return  title;
     }
 
-    private void setTitle(String title){
+    public void setTitle(String title){
        this.title = title;
     }
 
-    private String getContent(){
+    public  String getContent(){
         return content;
     }
 
-    private void setContent(String content){
+    public  void setContent(String content){
         this.content = content;
     }
 }
