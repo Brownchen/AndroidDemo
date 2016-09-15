@@ -11,11 +11,11 @@ import android.widget.Toast;
 public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String CREATE_BOOK = "create table book ("
-            +"id integer primary key autoincrement,"
-            +"author text,"
-            +"price real"
-            +"pages integer"
-            +"name text)";
+            + "id integer primary key autoincrement, "
+            + "author text, "
+            + "price real, "
+            + "pages integer, "
+            + "name text)";
 
     public static final String CREATE_CATEGORY = "create table Category ("
             +"id integer primary key autoincrement,"
@@ -36,7 +36,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void onUpgrade(SQLiteDatabase db,int oldVersion,int newVersion){
-        db.execSQL("drop table if exists Book");
+        db.execSQL("drop table if exists book");
         db.execSQL("drop table if exists Category");
         onCreate(db);
 
