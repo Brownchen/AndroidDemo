@@ -19,6 +19,13 @@
         />
 
     <Button
+        android:id="@+id/delete_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete data"
+        />
+
+    <Button
         android:id="@+id/update_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
