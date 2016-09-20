@@ -3,8 +3,8 @@ package com.example.brown.databasetest;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -86,6 +86,31 @@ public class MainActivity extends AppCompatActivity {
                     }while (cursor.moveToNext());
                 }
                 cursor.close();
+            }
+        });
+
+        Button replaceButton = (Button) findViewById(R.id.replace_data);
+        replaceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                db.beginTransaction();
+                try {
+                    db.delete("Book",null,null);
+                    if (true){
+                        throw new NullPointerException();
+                    }
+                }catch (Exception e){
+                    ContentValues values = new ContentValues();
+                    values.put("name","Game of Thrones");
+                    values.put("author","George Martin");
+                    values.put("pages",270);
+                    values.put("price",20.86);
+                    db.insert("Book",null,values);
+                    db.setTransactionSuccessful();
+                }finally{
+                    db.endTransaction();
+                }
             }
         });
     }
