@@ -28,7 +28,10 @@ public class MainActivity extends Activity {
                 values.put("pages",1040);
                 values.put("price",22.99);
                 Uri newUri = getContentResolver().insert(uri,values);
-                newId = newUri.getPathSegments().get(1);
+
+                    newId = newUri.getPathSegments().get(1);
+
+
             }
         });
 
