@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 builder.setContentTitle("This is content title");
                 builder.setContentText("This is content text");
                 builder.setAutoCancel(true);
+                builder.setDefaults(Notification.DEFAULT_ALL);
                 Intent intent = new Intent(MainActivity.this,NotificationActivity.class);
                 PendingIntent pi = PendingIntent.getActivity(MainActivity.this,0,intent,PendingIntent.FLAG_CANCEL_CURRENT);
                 builder.setContentIntent(pi);
