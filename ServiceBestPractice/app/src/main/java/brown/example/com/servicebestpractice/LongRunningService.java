@@ -31,8 +31,8 @@ public class LongRunningService extends Service {
         int minute = 60*1000;
         long triggerAtTime = SystemClock.elapsedRealtime() + minute;
         Intent intent1 = new Intent(this,AlarmReceiver.class);
-        PendingIntent pi = PendingIntent.getBroadcast(this,0,intent,0);
-        manager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,triggerAtTime,pi);
+        PendingIntent pi = PendingIntent.getBroadcast(this,0,intent1,0);
+        manager.setExact(AlarmManager.ELAPSED_REALTIME_WAKEUP,triggerAtTime,pi);
         return super.onStartCommand(intent,flags,startId);
     }
 }
