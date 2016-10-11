@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.unbind_service:
                 unbindService(connection);
+//                NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+//                manager.cancel(1);
                 break;
             default:
                 break;
