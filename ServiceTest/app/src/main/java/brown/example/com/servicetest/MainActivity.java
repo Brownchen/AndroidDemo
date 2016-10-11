@@ -6,6 +6,7 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button bindService;
 
     private Button unbindService;
+
+    private Button startIntentService;
 
     private MyService.DownloadBinder downloadBinder;
 
@@ -42,10 +45,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stopService = (Button)findViewById(R.id.stop_service);
         bindService = (Button)findViewById(R.id.bind_service);
         unbindService = (Button)findViewById(R.id.unbind_service);
+        startIntentService = (Button)findViewById(R.id.start_intent_service);
         startService.setOnClickListener(this);
         stopService.setOnClickListener(this);
         bindService.setOnClickListener(this);
         unbindService.setOnClickListener(this);
+        startIntentService.setOnClickListener(this);
     }
 
     public void onClick(View v){
@@ -66,6 +71,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 unbindService(connection);
 //                NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 //                manager.cancel(1);
+                break;
+            case R.id.start_intent_service:
+                Log.d("MainActivity","Thread id is " + Thread.currentThread().getId());
+                Intent intentService = new Intent(this, MyIntentService.class);
+                startService(intentService);
                 break;
             default:
                 break;
