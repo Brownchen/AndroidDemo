@@ -1,14 +1,17 @@
 package edu.whut.chenmin.job2;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener,View.OnClickListener {
 
     private List<Songs> songsList = new ArrayList<Songs>();
     @Override
@@ -21,7 +24,31 @@ public class MainActivity extends AppCompatActivity {
         Button pause = (Button) findViewById(R.id.pause);
         Button play = (Button) findViewById(R.id.play);
         Button stop = (Button) findViewById(R.id.stop);
+        pause.setOnClickListener(this);
+        play.setOnClickListener(this);
+        stop.setOnClickListener(this);
+
         listView.setAdapter(songsAdapter);
+        listView.setOnItemClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.pause:
+
+        }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//        i = (Integer) view.getTag();
+        Intent intent = new Intent(MainActivity.this,LyricsActivity.class);
+        intent.putExtra("id", i);
+        startActivity(intent);
+//        switch (view.getId()){
+//            case R.id.songs_image:
+//        }
     }
 
     private void initSongs(){
