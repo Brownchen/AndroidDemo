@@ -2,7 +2,9 @@ package edu.whut.chenmin.job2;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 /**
@@ -10,6 +12,10 @@ import android.widget.TextView;
  */
 
 public class LyricsActivity extends Activity{
+
+    private MediaPlayer mediaPlayer;
+
+    int[] MP3List = {R.raw.m1, R.raw.m2, R.raw.m3};
 
     public TextView lyricsText;
 
@@ -19,7 +25,9 @@ public class LyricsActivity extends Activity{
         setContentView(R.layout.lyrics_layout);
         Intent intent = getIntent();
         int i = intent.getIntExtra("id", 0);
-        TextView lyricsText = (TextView) findViewById(R.id.lyrics_text);
+        lyricsText = (TextView) findViewById(R.id.lyrics_text);
+//        mediaPlayer
+        Log.e("tag", "media="+mediaPlayer);
         switch (i) {
             case 0:
                 lyricsText.setText(
@@ -57,6 +65,8 @@ public class LyricsActivity extends Activity{
                                         "           至惊至惊你地唔俾面\n" +
                                         "           至惊至惊你地唔俾面\n" +
                                         "           至惊至惊你地唔俾面");
+                mediaPlayer = MediaPlayer.create(this, R.raw.m1);
+                mediaPlayer.start();
                 break;
             case 1:
                 lyricsText.setText(
@@ -113,6 +123,8 @@ public class LyricsActivity extends Activity{
                                 "               你还嫌不够\n" +
                                 "               我把这陈年风褛\n" +
                                 "               送赠你解咒");
+                mediaPlayer = MediaPlayer.create(this, R.raw.m2);
+                mediaPlayer.start();
                 break;
             case 2:
                 lyricsText.setText(
@@ -153,9 +165,12 @@ public class LyricsActivity extends Activity{
                                 "          忧郁奔向冷的天 活在我的心里边\n" +
                                 "　　      始终只有你方可 令逝去的心再甜\n" +
                                 "　　      忧郁奔向冷的天");
+                mediaPlayer = MediaPlayer.create(this, R.raw.m3);
+                mediaPlayer.start();
                 break;
 
         }
         }
+
 
 }

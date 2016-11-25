@@ -1,8 +1,12 @@
 package edu.whut.chenmin.job2;
 
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -14,6 +18,23 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener,View.OnClickListener {
 
     private List<Songs> songsList = new ArrayList<Songs>();
+
+    private BindMusicPlayerService bindMusicPlayerService;
+
+    private ServiceConnection connection = new ServiceConnection(){
+
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            Log.v("BindMusicButton", "in onServiceConnected(ComponentName name, IBinder service)");
+            bindMusicPlayerService = ((BindMusicPlayerService.MyBinder)service).getService();
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            bindMusicPlayerService = null;
+            Log.v("BindMusicButton", "in onServiceDisconnected(ComponentName name) ");
+
+        }};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,12 +51,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         listView.setAdapter(songsAdapter);
         listView.setOnItemClickListener(this);
+
+        Intent intent = new Intent(MainActivity.this,BindMusicPlayerService.class);
+        bindService(intent,connection,BIND_AUTO_CREATE);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.pause:
+                bindMusicPlayerService.puase();
+                break;
+            case R.id.play:
+                bindMusicPlayerService.play();
+                break;
+            case R.id.stop:
+                bindMusicPlayerService.stop();
+                break;
 
         }
     }
