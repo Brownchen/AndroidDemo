@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         listView.setAdapter(songsAdapter);
         listView.setOnItemClickListener(this);
 
-        Intent intent = new Intent(MainActivity.this,BindMusicPlayerService.class);
-        bindService(intent,connection,BIND_AUTO_CREATE);
+//        Intent intent = new Intent(MainActivity.this,BindMusicPlayerService.class);
+//        bindService(intent,connection,BIND_AUTO_CREATE);
     }
 
     @Override
@@ -78,6 +78,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Intent intent = new Intent(MainActivity.this,LyricsActivity.class);
         intent.putExtra("id", i);
         startActivity(intent);
+        Intent serviceIntent = new Intent(MainActivity.this,BindMusicPlayerService.class);
+        serviceIntent.putExtra("id",i);
+        startService(serviceIntent);
+        bindService(serviceIntent,connection,BIND_AUTO_CREATE);
 //        switch (view.getId()){
 //            case R.id.songs_image:
 //        }

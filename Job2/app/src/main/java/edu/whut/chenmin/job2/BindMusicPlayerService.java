@@ -36,10 +36,37 @@ public class BindMusicPlayerService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+//        Intent serviceIntent = this.getIntent();
+//        int i = serviceIntent.getIntExtra("id", 0);
+//        int i = Intent.getIntEx
+
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+
+//        Intent serviceIntent = getIntent();
+        int i = intent.getIntExtra("id", 0);
+        if(mediaPlayer!=null) {
+            mediaPlayer.stop();
+        }
+        switch (i){
+            case 0:
+//                if(mediaPlayer!=null) {
+//                    mediaPlayer.stop();
+//                }
+                mediaPlayer = MediaPlayer.create(this, R.raw.m1);
+                mediaPlayer.start();
+                break;
+            case 1:
+                mediaPlayer = MediaPlayer.create(this, R.raw.m2);
+                mediaPlayer.start();
+                break;
+            case 2:
+                mediaPlayer = MediaPlayer.create(this, R.raw.m3);
+                mediaPlayer.start();
+                break;
+        }
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -64,17 +91,17 @@ public class BindMusicPlayerService extends Service {
 
     }
 
-    public void replay(){
-        Log.v("BindMusicPlayerService", "in  replay()");
-        if (mediaPlayer == null) {
-            mediaPlayer = MediaPlayer.create(this,MP3List[0]);
-            mediaPlayer.setLooping(false);
-        }
-        if (!mediaPlayer.isPlaying()) {
-            mediaPlayer.start();
-        }
-
-    }
+//    public void replay(){
+//        Log.v("BindMusicPlayerService", "in  replay()");
+//        if (mediaPlayer == null) {
+//            mediaPlayer = MediaPlayer.create(this,MP3List[0]);
+//            mediaPlayer.setLooping(false);
+//        }
+//        if (!mediaPlayer.isPlaying()) {
+//            mediaPlayer.start();
+//        }
+//
+//    }
 
     public void puase(){
         Log.v("BindMusicPlayerService", "in puase()");
