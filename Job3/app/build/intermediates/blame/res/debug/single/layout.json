@@ -108,6 +108,10 @@
         "source": "D:\\AndroidDemo\\Job3\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
+        "merged": "D:\\AndroidDemo\\Job3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_lyric.xml",
+        "source": "D:\\AndroidDemo\\Job3\\app\\src\\main\\res\\layout\\activity_lyric.xml"
+    },
+    {
         "merged": "D:\\AndroidDemo\\Job3\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
         "source": "D:\\AndroidDemo\\Job3\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_action_menu_item_layout.xml"
     },

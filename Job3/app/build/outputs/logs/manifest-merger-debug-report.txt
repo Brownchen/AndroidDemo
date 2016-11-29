@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml:2:1-23:12
+ADDED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml:2:1-22:12
 	package
 		ADDED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml:3:5-36
 		INJECTED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml:2:1-23:12
 		INJECTED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml
 		INJECTED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml
 application
-ADDED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml:5:5-19:19
+ADDED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml:5:5-18:19
 MERGED from [com.android.support:appcompat-v7:25.0.1] D:\AndroidDemo\Job3\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:25.0.1] D:\AndroidDemo\Job3\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:25.0.1] D:\AndroidDemo\Job3\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\AndroidManifest.xml:25:5-20
@@ -49,9 +49,9 @@ ADDED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml:15:17-77
 	android:name
 		ADDED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml:15:27-74
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml:21:5-96
+ADDED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml:20:5-96
 	android:name
-		ADDED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml:21:22-77
+		ADDED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml:20:22-77
 uses-sdk
 INJECTED from D:\AndroidDemo\Job3\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:25.0.1] D:\AndroidDemo\Job3\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\AndroidManifest.xml:21:5-23:78
