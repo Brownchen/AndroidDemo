@@ -51,13 +51,14 @@ public class MusicLoader {
 
         @SuppressLint("LongLogTag")
         private MusicLoader(){		                                                                                                       //利用ContentResolver的query函数来查询数据，然后将得到的结果放到MusicInfo对象中，最后放到数组中
-            Cursor cursor = contentResolver.query(contentUri, projection, where, null, sortOrder);
+            Cursor cursor = contentResolver.query(contentUri, null, null, null, null);
             if(cursor == null){
                 Log.v(TAG,"cursor == null.");
             }else if(!cursor.moveToFirst()){
                 Log.v(TAG,"moveToFirst()->false.");
             }else{
-                int displayNameCol = cursor.getColumnIndex(MediaStore.Audio.Media.DISPLAY_NAME);
+                int displayNameCol = cursor.getColumnIndex(MediaStore.Audio.Media.TITLE);
+                Log.e("GG", displayNameCol + "");
                 int albumCol = cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM);
                 int idCol = cursor.getColumnIndex(MediaStore.Audio.Media._ID);
                 int durationCol = cursor.getColumnIndex(MediaStore.Audio.Media.DURATION);
@@ -74,6 +75,7 @@ public class MusicLoader {
                     String url = cursor.getString(urlCol);
 
                     MusicInfo musicInfo = new MusicInfo(id, title);
+                    musicInfo.setTitle(title);
                     musicInfo.setAlbum(album);
                     musicInfo.setDuration(duration);
                     musicInfo.setSize(size);

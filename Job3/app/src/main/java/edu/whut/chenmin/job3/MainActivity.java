@@ -29,8 +29,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         initList();
         MusicAdapter adapter = new MusicAdapter(MainActivity.this,R.layout.iconlist,musicList);
         ListView listview = (ListView) findViewById(R.id.list_view);
-        TextView Title = (TextView) findViewById(R.id.songs_name);
-        TextView singer = (TextView) findViewById(R.id.songs_singer);
+        //TextView Title = (TextView) findViewById(R.id.songs_name);
+        //TextView singer = (TextView) findViewById(R.id.songs_singer);
+//        Title.setText("不可撤销");
+//        singer.setText("不可撤销");
         listview.setAdapter(adapter);
         listview.setOnItemClickListener(this);
 
@@ -44,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //用Bundle携带数据
         Bundle bundle=new Bundle();
         //传递name参数为tinyphp
-        bundle.putString("title", Title.getText().toString());
-        bundle.putString("text", singer.getText().toString());
+        bundle.putString("title", musicList.get(i).getTitle());
+        bundle.putString("text", musicList.get(i).getArtist());
         intent.putExtras(bundle);
 
         startActivity(intent);
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         for (int i = 0; i < lengh; i++) {
             Map<String, Object> item = new HashMap<String, Object>();
             item.put("image", R.mipmap.ic_launcher);
-            item.put("title", my_list.get(i).getTitle().substring(0, my_list.get(i).getTitle().lastIndexOf('.')));
+            item.put("title", my_list.get(i).getTitle());
             item.put("text", my_list.get(i).getArtist());
             item.put("url", my_list.get(i).getUrl());
             mData.add(item);
